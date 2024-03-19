@@ -1,6 +1,6 @@
 <?php
 
-namespace App\Livewire;
+namespace App\Livewire\Customers;
 
 use Livewire\Component;
 use App\Models\Customer;
@@ -34,6 +34,6 @@ class CustomersTable extends Component
             ->orderBy($this->sortBy, $this->sortDirection)
             ->paginate($this->paginate);
 
-        return view('livewire.customers-table', compact('data'));
+        return view('livewire.customers.customers-table', compact('data'));
     }
 }

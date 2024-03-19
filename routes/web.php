@@ -1,7 +1,7 @@
 <?php
 
-use App\Livewire\CustomersIndex;
 use Illuminate\Support\Facades\Route;
+use App\Livewire\Customers\CustomersIndex;
 
 /*
 |--------------------------------------------------------------------------

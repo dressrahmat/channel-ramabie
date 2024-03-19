@@ -1,9 +1,10 @@
 <?php
 
-namespace App\Livewire;
+namespace App\Livewire\Customers;
 
-use App\Livewire\Forms\CustomerForm;
 use Livewire\Component;
+use App\Livewire\Forms\CustomerForm;
+use App\Livewire\Customers\CustomersTable;
 
 class CustomersCreate extends Component
 {
@@ -23,6 +24,6 @@ class CustomersCreate extends Component
 
     public function render()
     {
-        return view('livewire.customers-create');
+        return view('livewire.customers.customers-create');
     }
 }

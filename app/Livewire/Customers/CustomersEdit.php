@@ -1,12 +1,12 @@
 <?php
 
-namespace App\Livewire;
+namespace App\Livewire\Customers;
 
 use Livewire\Component;
 use App\Models\Customer;
 use Livewire\Attributes\On;
-use App\Livewire\CustomersTable;
 use App\Livewire\Forms\CustomerForm;
+use App\Livewire\Customers\CustomersTable;
 
 class CustomersEdit extends Component
 {
@@ -34,6 +34,6 @@ class CustomersEdit extends Component
 
     public function render()
     {
-        return view('livewire.customers-edit');
+        return view('livewire.customers.customers-edit');
     }
 }

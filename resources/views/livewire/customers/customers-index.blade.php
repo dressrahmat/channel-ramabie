@@ -9,10 +9,10 @@
         <div class="max-w-7xl mx-auto sm:px-6 lg:px-8">
             <div class="bg-white overflow-hidden shadow-xl sm:rounded-lg p-4">
 
-                @livewire('customers-create')
-                @livewire('customers-table')
-                @livewire('customers-edit')
-                @livewire('customers-delete')
+                @livewire('customers.customers-create')
+                @livewire('customers.customers-table')
+                @livewire('customers.customers-edit')
+                @livewire('customers.customers-delete')
 
                 
             </div>

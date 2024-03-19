@@ -1,6 +1,6 @@
 <?php
 
-namespace App\Livewire;
+namespace App\Livewire\Customers;
 
 use Livewire\Component;
 use App\Models\Customer;
@@ -38,6 +38,6 @@ class CustomersDelete extends Component
 
     public function render()
     {
-        return view('livewire.customers-delete');
+        return view('livewire.customers.customers-delete');
     }
 }

@@ -6,19 +6,19 @@ use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\Relations\HasMany;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 
-class Customer extends Model
+class Car extends Model
 {
     use HasFactory;
 
-    protected $fillable = ['name', 'email', 'address'];
+    protected $fillable = ['name'];
 
     /**
-     * Get all of the service for the Customer
+     * Get all of the type for the Car
      *
      * @return HasMany
      */
-    public function service(): HasMany
+    public function type(): HasMany
     {
-        return $this->hasMany(Service::class);
+        return $this->hasMany(Type::class);
     }
 }
