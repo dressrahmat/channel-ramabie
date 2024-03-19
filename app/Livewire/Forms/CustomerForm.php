@@ -2,14 +2,15 @@
 
 namespace App\Livewire\Forms;
 
-use Livewire\Form;
 use App\Models\Customer;
 use Livewire\Attributes\Rule;
-use Livewire\Attributes\Validate;
+use Livewire\Form;
 
 class CustomerForm extends Form
 {
     public ?Customer $customer;
+
+    public $id;
 
     #[Rule('required|min:3', as: 'Name')]
     public $name;

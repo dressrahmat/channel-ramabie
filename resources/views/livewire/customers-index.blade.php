@@ -11,6 +11,8 @@
 
                 @livewire('customers-create')
                 @livewire('customers-table')
+                @livewire('customers-edit')
+                @livewire('customers-delete')
 
                 
             </div>
