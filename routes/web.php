@@ -1,6 +1,7 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
+use App\Livewire\Services\ServicesIndex;
 use App\Livewire\Customers\CustomersIndex;
 
 /*
@@ -28,4 +29,5 @@ Route::middleware([
     })->name('dashboard');
 
     Route::get('customer', CustomersIndex::class)->name('customers.index');
+    Route::get('service', ServicesIndex::class)->name('services.index');
 });
