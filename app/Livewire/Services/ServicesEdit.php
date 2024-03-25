@@ -2,11 +2,10 @@
 
 namespace App\Livewire\Services;
 
-use Livewire\Component;
+use App\Livewire\Forms\ServiceForm;
 use App\Models\Service;
 use Livewire\Attributes\On;
-use App\Livewire\Forms\ServiceForm;
-use App\Livewire\Services\ServicesTable;
+use Livewire\Component;
 
 class ServicesEdit extends Component
 {
@@ -14,7 +13,7 @@ class ServicesEdit extends Component
 
     public $modalServiceEdit = false;
 
-   #[On('dispatch-services-table-edit')] 
+    #[On('dispatch-services-table-edit')]
     public function set_service(Service $id)
     {
         $this->form->setService($id);
@@ -26,7 +25,6 @@ class ServicesEdit extends Component
         $this->modalServiceEdit = true;
     }
 
-    
     public function carChange()
     {
         $this->dispatch('set-type-edit', id: $this->form->type, data: $this->form->setType());
@@ -42,10 +40,9 @@ class ServicesEdit extends Component
             $this->dispatch('notify', title: 'success', message: 'data berhasil diupdate');
             $this->dispatch('dispatch-services-create-edit')->to(ServicesTable::class);
         } catch (\Throwable $th) {
-            $this->dispatch('notify', title: 'failed', message: 'data gagal diupdate' . $th->getMessage());
+            $this->dispatch('notify', title: 'failed', message: 'data gagal diupdate'.$th->getMessage());
         }
     }
-
 
     public function render()
     {

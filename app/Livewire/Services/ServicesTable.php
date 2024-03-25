@@ -2,12 +2,12 @@
 
 namespace App\Livewire\Services;
 
-use Livewire\Component;
+use App\Livewire\Forms\ServiceForm;
 use App\Models\Service;
 use App\Traits\WithSorting;
 use Livewire\Attributes\On;
+use Livewire\Component;
 use Livewire\WithPagination;
-use App\Livewire\Forms\ServiceForm;
 
 class ServicesTable extends Component
 {
@@ -32,7 +32,7 @@ class ServicesTable extends Component
             'customers.name as customer',
             'cars.name as car',
             'types.name as type',
-            )
+        )
             ->join('customers', 'customers.id', 'services.customer_id')
             ->join('types', 'types.id', 'services.type_id')
             ->join('cars', 'cars.id', 'types.car_id')

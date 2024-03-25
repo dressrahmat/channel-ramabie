@@ -3,11 +3,9 @@
 namespace App\Livewire\Services;
 
 use App\Models\Service;
-use Livewire\Component;
-use App\Models\Customer;
-use Livewire\Attributes\On;
 use Livewire\Attributes\Locked;
-use App\Livewire\Services\ServicesTable;
+use Livewire\Attributes\On;
+use Livewire\Component;
 
 class ServicesDelete extends Component
 {
@@ -36,7 +34,7 @@ class ServicesDelete extends Component
             $this->modalCustomerDelete = false;
             $this->dispatch('dispatch-services-delete')->to(ServicesTable::class);
         } catch (\Throwable $th) {
-            $this->dispatch('notify', title: 'failed', message: 'data gagal dihapus' . $th->getMessage());
+            $this->dispatch('notify', title: 'failed', message: 'data gagal dihapus'.$th->getMessage());
         }
     }
 

@@ -6,22 +6,17 @@ use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\Relations\BelongsTo;
 
-class Service extends Model
+class Reward extends Model
 {
     use HasFactory;
 
-    protected $fillable = ['customer_id', 'type_id'];
+    protected $fillable = ['customer_id', 'month', 'year', 'name'];
 
     /**
-     * Get the customer that owns the Service
+     * Get the customer that owns the Reward
      */
     public function customer(): BelongsTo
     {
         return $this->belongsTo(Customer::class);
-    }
-
-    public function type(): BelongsTo
-    {
-        return $this->belongsTo(Type::class);
     }
 }

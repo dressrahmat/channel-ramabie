@@ -2,9 +2,9 @@
 
 namespace App\Models;
 
+use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\Relations\HasMany;
-use Illuminate\Database\Eloquent\Factories\HasFactory;
 
 class Car extends Model
 {
@@ -14,8 +14,6 @@ class Car extends Model
 
     /**
      * Get all of the type for the Car
-     *
-     * @return HasMany
      */
     public function type(): HasMany
     {

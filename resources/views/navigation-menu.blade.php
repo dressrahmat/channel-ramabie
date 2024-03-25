@@ -21,6 +21,9 @@
                     <x-nav-link href="{{ route('services.index') }}" wire:navigate :active="request()->routeIs('services.index')">
                         {{ __('Services') }}
                     </x-nav-link>
+                    <x-nav-link href="{{ route('rewards.index') }}" wire:navigate :active="request()->routeIs('rewards.index')">
+                        {{ __('Rewards') }}
+                    </x-nav-link>
                 </div>
             </div>
 
@@ -153,6 +156,9 @@
             </x-responsive-nav-link>
             <x-responsive-nav-link href="{{ route('services.index') }}" wire:navigate :active="request()->routeIs('services.index')">
                 {{ __('Services') }}
+            </x-responsive-nav-link>
+            <x-responsive-nav-link href="{{ route('rewards.index') }}" wire:navigate :active="request()->routeIs('rewards.index')">
+                {{ __('Rewards') }}
             </x-responsive-nav-link>
         </div>
 

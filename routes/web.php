@@ -1,8 +1,9 @@
 <?php
 
-use Illuminate\Support\Facades\Route;
-use App\Livewire\Services\ServicesIndex;
 use App\Livewire\Customers\CustomersIndex;
+use App\Livewire\Rewards\RewardsIndex;
+use App\Livewire\Services\ServicesIndex;
+use Illuminate\Support\Facades\Route;
 
 /*
 |--------------------------------------------------------------------------
@@ -30,4 +31,5 @@ Route::middleware([
 
     Route::get('customer', CustomersIndex::class)->name('customers.index');
     Route::get('service', ServicesIndex::class)->name('services.index');
+    Route::get('reward', RewardsIndex::class)->name('rewards.index');
 });

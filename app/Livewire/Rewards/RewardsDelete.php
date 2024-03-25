@@ -1,13 +1,15 @@
 <?php
 
-namespace App\Livewire\Customers;
+namespace App\Livewire\Rewards;
 
-use App\Models\Customer;
-use Livewire\Attributes\Locked;
-use Livewire\Attributes\On;
+use App\Models\Reward;
 use Livewire\Component;
+use App\Models\Customer;
+use Livewire\Attributes\On;
+use Livewire\Attributes\Locked;
+use App\Livewire\Rewards\RewardsTable;
 
-class CustomersDelete extends Component
+class RewardsDelete extends Component
 {
     #[Locked]
     public $id;
@@ -17,8 +19,8 @@ class CustomersDelete extends Component
 
     public $modalCustomerDelete = false;
 
-    #[On('dispatch-customer-table-delete')]
-    public function set_customer($id, $name)
+    #[On('dispatch-reward-table-delete')]
+    public function set_reward($id, $name)
     {
         $this->id = $id;
         $this->name = $name;
@@ -28,16 +30,16 @@ class CustomersDelete extends Component
 
     public function delete()
     {
-        $delete = Customer::destroy($this->id);
+        $delete = Reward::destroy($this->id);
 
         ($delete) ? $this->dispatch('notify', title: 'success', message: 'data berhasil dihapus') : $this->dispatch('notify', title: 'failed', message: 'data gagal dihapus');
 
         $this->modalCustomerDelete = false;
-        $this->dispatch('dispatch-customer-delete')->to(CustomersTable::class);
+        $this->dispatch('dispatch-reward-delete')->to(RewardsTable::class);
     }
 
     public function render()
     {
-        return view('livewire.customers.customers-delete');
+        return view('livewire.rewards.rewards-delete');
     }
 }

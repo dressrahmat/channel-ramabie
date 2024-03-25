@@ -2,9 +2,8 @@
 
 namespace App\Livewire\Customers;
 
-use Livewire\Component;
 use App\Livewire\Forms\CustomerForm;
-use App\Livewire\Customers\CustomersTable;
+use Livewire\Component;
 
 class CustomersCreate extends Component
 {

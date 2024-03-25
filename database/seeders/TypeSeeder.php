@@ -4,7 +4,6 @@ namespace Database\Seeders;
 
 use App\Models\Type;
 use Illuminate\Database\Seeder;
-use Illuminate\Database\Console\Seeds\WithoutModelEvents;
 
 class TypeSeeder extends Seeder
 {
@@ -13,12 +12,12 @@ class TypeSeeder extends Seeder
      */
     public function run(): void
     {
-        Type::create(['car_id' => 1,'name' => 'BRV']);
-        Type::create(['car_id' => 1,'name' => 'CRV']);
-        Type::create(['car_id' => 1,'name' => 'Mobilio']);
-        Type::create(['car_id' => 1,'name' => 'Brio']);
-        Type::create(['car_id' => 2,'name' => 'Inova']);
-        Type::create(['car_id' => 2,'name' => 'Fortuner']);
-        Type::create(['car_id' => 2,'name' => 'Avansa']);
+        Type::create(['car_id' => 1, 'name' => 'BRV']);
+        Type::create(['car_id' => 1, 'name' => 'CRV']);
+        Type::create(['car_id' => 1, 'name' => 'Mobilio']);
+        Type::create(['car_id' => 1, 'name' => 'Brio']);
+        Type::create(['car_id' => 2, 'name' => 'Inova']);
+        Type::create(['car_id' => 2, 'name' => 'Fortuner']);
+        Type::create(['car_id' => 2, 'name' => 'Avansa']);
     }
 }

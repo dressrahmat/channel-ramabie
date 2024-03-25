@@ -2,13 +2,12 @@
 
 namespace App\Livewire\Forms;
 
-use Livewire\Form;
 use App\Models\Car;
-use App\Models\Type;
-use App\Models\Service;
 use App\Models\Customer;
+use App\Models\Service;
+use App\Models\Type;
 use Livewire\Attributes\Rule;
-use Livewire\Attributes\Validate;
+use Livewire\Form;
 
 class ServiceForm extends Form
 {

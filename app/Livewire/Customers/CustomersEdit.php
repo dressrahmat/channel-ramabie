@@ -2,11 +2,10 @@
 
 namespace App\Livewire\Customers;
 
-use Livewire\Component;
+use App\Livewire\Forms\CustomerForm;
 use App\Models\Customer;
 use Livewire\Attributes\On;
-use App\Livewire\Forms\CustomerForm;
-use App\Livewire\Customers\CustomersTable;
+use Livewire\Component;
 
 class CustomersEdit extends Component
 {
@@ -14,7 +13,7 @@ class CustomersEdit extends Component
 
     public $modalCustomerEdit = false;
 
-   #[On('form-edit')] 
+    #[On('form-edit')]
     public function set_customer(Customer $id)
     {
         $this->form->setCustomer($id);
@@ -30,7 +29,6 @@ class CustomersEdit extends Component
 
         $this->dispatch('dispatch-customer-create-edit')->to(CustomersTable::class);
     }
-
 
     public function render()
     {

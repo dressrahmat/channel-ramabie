@@ -2,9 +2,8 @@
 
 namespace App\Livewire\Services;
 
-use Livewire\Component;
 use App\Livewire\Forms\ServiceForm;
-use App\Livewire\Services\ServicesTable;
+use Livewire\Component;
 
 class ServicesCreate extends Component
 {
@@ -22,7 +21,7 @@ class ServicesCreate extends Component
             $this->dispatch('dispatch-services-create-save')->to(ServicesTable::class);
 
         } catch (\Throwable $th) {
-            $this->dispatch('notify', title: 'failed', message: 'data gagal disimpan' . $th->getMessage());
+            $this->dispatch('notify', title: 'failed', message: 'data gagal disimpan'.$th->getMessage());
         }
 
     }

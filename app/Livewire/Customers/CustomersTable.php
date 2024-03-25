@@ -2,12 +2,12 @@
 
 namespace App\Livewire\Customers;
 
-use Livewire\Component;
+use App\Livewire\Forms\CustomerForm;
 use App\Models\Customer;
 use App\Traits\WithSorting;
 use Livewire\Attributes\On;
+use Livewire\Component;
 use Livewire\WithPagination;
-use App\Livewire\Forms\CustomerForm;
 
 class CustomersTable extends Component
 {
