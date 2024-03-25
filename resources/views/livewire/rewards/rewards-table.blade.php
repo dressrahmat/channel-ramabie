@@ -32,9 +32,10 @@
             <tr>
                 <td class="p-2 text-center whitespace-nowrap border border-spacing-1"></td>
                 <td class="p-2 text-center whitespace-nowrap border border-spacing-1"></td>
-                <td class="p-2 text-center whitespace-nowrap border border-spacing-1"><x-input wire:model.live="rewardsname" type="search" class="w-full text-sm" /></td>
+                <td class="p-2 text-center whitespace-nowrap border border-spacing-1"><x-input wire:model.live="form.customer" type="search" class="w-full text-sm" /></td>
                 <td class="p-2 text-center whitespace-nowrap border border-spacing-1"><x-input wire:model.live="form.month" type="search" class="w-full text-sm" /></td>
                 <td class="p-2 text-center whitespace-nowrap border border-spacing-1"><x-input wire:model.live="form.year" type="search" class="w-full text-sm" /></td>
+                <td class="p-2 text-center whitespace-nowrap border border-spacing-1"><x-input wire:model.live="form.name" type="search" class="w-full text-sm" /></td>
             </tr>
         </thead>
         <tbody>
