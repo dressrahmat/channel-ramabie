@@ -10,7 +10,9 @@ class Customer extends Model
 {
     use HasFactory;
 
-    protected $fillable = ['name', 'email', 'address'];
+    protected $fillable = ['name', 'email', 'address', 'hobbies'];
+
+    protected $casts = ['hobbies' => 'array'];
 
     /**
      * Get all of the service for the Customer

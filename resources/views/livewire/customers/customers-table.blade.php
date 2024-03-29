@@ -1,4 +1,4 @@
-<div>
+<div class="w-full">
     <x-select wire:model.live="paginate">
         <option value="5">5</option>
         <option value="10">10</option>
@@ -28,6 +28,9 @@
                 <th @click="$wire.sortField('address')" class="p-2 whitespace-nowrap border border-spacing-1 cursor-pointer">
                     <x-sort :$sortDirection :$sortBy :field="'address'" /> Address
                 </th>
+                <th @click="$wire.sortField('address')" class="p-2 whitespace-nowrap border border-spacing-1 cursor-pointer">
+                    <x-sort :$sortDirection :$sortBy :field="'hobbies'" /> Hobbies
+                </th>
             </tr>
             <tr>
                 <td class="p-2 text-center whitespace-nowrap border border-spacing-1"></td>
@@ -36,6 +39,7 @@
                 <td class="p-2 text-center whitespace-nowrap border border-spacing-1"><x-input wire:model.live="form.name" type="search" class="w-full text-sm" /></td>
                 <td class="p-2 text-center whitespace-nowrap border border-spacing-1"><x-input wire:model.live="form.email" type="search" class="w-full text-sm" /></td>
                 <td class="p-2 text-center whitespace-nowrap border border-spacing-1"><x-input wire:model.live="form.address" type="search" class="w-full text-sm" /></td>
+                <td class="p-2 text-center whitespace-nowrap border border-spacing-1"><x-input wire:model.live="form.hobbies" type="search" class="w-full text-sm" /></td>
             </tr>
         </thead>
         <tbody>
@@ -55,6 +59,13 @@
                     <td class="p-2 whitespace-nowrap border border-spacing-1">{{ $customer->name }}</td>
                     <td class="p-2 whitespace-nowrap border border-spacing-1">{{ $customer->email }}</td>
                     <td class="p-2 whitespace-nowrap border border-spacing-1">{{ $customer->address }}</td>
+                    <td class="p-2 whitespace-nowrap border border-spacing-1">
+                        @isset($customer->hobbies)
+                        @foreach ($customer->hobbies as $hobby)
+                            {{ $hobby }}, <br>
+                        @endforeach
+                        @endisset
+                    </td>
                 </tr>
             @endforeach
             @endisset

@@ -17,6 +17,9 @@ class CustomersEdit extends Component
     public function set_customer(Customer $id)
     {
         $this->form->setCustomer($id);
+        $get_hobbies = Customer::where('id', $this->form->customer->id)->value('hobbies');
+
+        $this->dispatch('set-hobbies-edit', data: collect($get_hobbies));
         $this->modalCustomerEdit = true;
     }
 
