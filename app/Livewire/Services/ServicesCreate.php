@@ -2,8 +2,9 @@
 
 namespace App\Livewire\Services;
 
-use App\Livewire\Forms\ServiceForm;
 use Livewire\Component;
+use App\Models\Customer;
+use App\Livewire\Forms\ServiceForm;
 
 class ServicesCreate extends Component
 {
@@ -32,9 +33,14 @@ class ServicesCreate extends Component
         $this->resetErrorBag();
     }
 
+    public function getCustomer($name)
+    {
+        return collect(Customer::select('id', 'name')->where('name', 'like', '%'.$name.'%')->get());
+    }
+
     public function render()
     {
-        $this->dispatch('set-customer-create', id: $this->form->type, data: $this->form->setCustomer());
+        // $this->dispatch('set-customer-create', id: $this->form->type, data: $this->form->setCustomer());
         $this->dispatch('set-car-create', id: $this->form->car, data: $this->form->setCar());
 
         return view('livewire.services.services-create');

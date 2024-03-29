@@ -21,7 +21,23 @@
                             valueField: 'id',
                             labelField: 'name',
                             searchField: 'name',
-                        });"
+                            load: function(query, callback) {
+                                $wire.getCustomer(query).then(results => {
+                                    callback(results);
+                                }).catch(() => {
+                                    callback();
+                                })
+                            },
+                            render: {
+                                option: function(item, escape) {
+                                    return `<div>${escape(item.name)}</div>`
+                                },
+                                option: function(item, escape) {
+                                    return `<div>${escape(item.name)}</div>`
+                                }
+                            }
+                        });
+                        "
                         @set-customer-create.window="
                             $el.customer.addOption(event.detail.data)
                         "

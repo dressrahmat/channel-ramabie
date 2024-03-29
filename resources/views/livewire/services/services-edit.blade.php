@@ -9,8 +9,8 @@
             <div class="grid grid-cols-12 gap-4">
 
                 <!-- Customer -->
-                <div class="col-span-12 mb-4">
-                    <x-label for="customer-edit" value="Name" />
+                <div class="col-span-12 mb-4" x-data="{id: $id('input-text')}">
+                    <x-label ::for="id" value="Name" />
                     <x-tom x-init="$el.customer = new Tom($el, {
                             sortField: {
                                 field: 'name',
@@ -19,11 +19,28 @@
                             valueField: 'id',
                             labelField: 'name',
                             searchField: 'name',
+                            load: function(query, callback) {
+                                $wire.getCustomer(query).then(results => {
+                                    callback(results);
+                                }).catch(() => {
+                                    callback();
+                                })
+                            },
+                            render: {
+                                option: function(item, escape) {
+                                    return `<div>${escape(item.name)}</div>`
+                                },
+                                option: function(item, escape) {
+                                    return `<div>${escape(item.name)}</div>`
+                                }
+                            }
                         });" @set-customer-edit.window="
+                            $el.customer.clear();
+                            $el.customer.clearOptions();
                             $el.customer.addOption(event.detail.data);
                             $el.customer.addItem(event.detail.id);
                             console.log(event.detail.id)
-                        " id="customer-edit" type="text" class="mt-1 w-full"
+                        "  ::id="id" type="text" class="mt-1 w-full"
                         wire:model="form.customer" require autocomplete="customer-edit">
                         <option></option>
                     </x-tom>

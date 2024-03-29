@@ -2,10 +2,11 @@
 
 namespace App\Livewire\Services;
 
-use App\Livewire\Forms\ServiceForm;
 use App\Models\Service;
-use Livewire\Attributes\On;
 use Livewire\Component;
+use App\Models\Customer;
+use Livewire\Attributes\On;
+use App\Livewire\Forms\ServiceForm;
 
 class ServicesEdit extends Component
 {
@@ -18,11 +19,18 @@ class ServicesEdit extends Component
     {
         $this->form->setService($id);
 
-        $this->dispatch('set-customer-edit', id: $this->form->customer, data: $this->form->setCustomer());
+        $get_customer = Customer::select('id', 'name')->where('id', $this->form->customer)->first();
+
+        $this->dispatch('set-customer-edit', id: $this->form->customer, data: collect($get_customer));
         $this->dispatch('set-car-edit', id: $this->form->car, data: $this->form->setCar());
         $this->dispatch('set-type-edit', id: $this->form->type, data: $this->form->setType());
 
         $this->modalServiceEdit = true;
+    }
+
+    public function getCustomer($name)
+    {
+        return collect(Customer::select('id', 'name')->where('name', 'like', '%'.$name.'%')->get());
     }
 
     public function carChange()
