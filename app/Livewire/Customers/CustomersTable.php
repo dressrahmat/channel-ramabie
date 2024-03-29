@@ -22,6 +22,15 @@ class CustomersTable extends Component
 
     public $sortDirection = 'desc';
 
+    public function confirmDelete($get_id)
+    {
+        try {
+            Customer::destroy($get_id);
+        } catch (\Throwable $th) {
+            $this->dispatch('sweet-alert', icon: 'error', title: 'data gagal di hapus');
+        }
+    }
+
     #[On('dispatch-customer-create-save')]
     #[On('dispatch-customer-create-edit')]
     #[On('dispatch-customer-delete')]

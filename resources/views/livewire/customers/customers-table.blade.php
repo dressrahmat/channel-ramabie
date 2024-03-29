@@ -47,7 +47,7 @@
                         <x-button @click="$dispatch('form-edit', { id: '{{ $customer->id }}' })" type="button">
                             Edit
                         </x-button>
-                        <x-danger-button @click="$dispatch('dispatch-customer-table-delete', { id: '{{ $customer->id }}', name: '{{ $customer->name }}' })">
+                        <x-danger-button @click="$dispatch('confirm-delete', { get_id: '{{ $customer->id }}' })">
                             Delete
                         </x-danger-button>
                     </td>
@@ -62,5 +62,8 @@
     </table>
     <div class="mt-3">
         {{ $data->onEachSide(1)->links() }}
+    </div>
+    <div>
+        <x-confirm-delete />
     </div>
 </div>
